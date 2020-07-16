@@ -23,9 +23,12 @@ input RegisterInput{
 type Query{
     getPosts: [Post]
     getUsers: [User]
+    getPost(postId : ID!): Post
 }
 type Mutation{
     register(registerInput: RegisterInput): User!
     login(username: String!, password: String!): User!
+    createPost(body: String!): Post
+    deletePost(postID: ID!): String!
 }
 `;
